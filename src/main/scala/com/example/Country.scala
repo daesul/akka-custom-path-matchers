@@ -18,7 +18,7 @@ object Country {
     case _ => None
   }
 
-  val CountryMatcher: PathMatcher1[Country] = {
+  val country: PathMatcher1[Country] = {
     PathMatcher("[a-z]{2}".r) flatMap { path =>
       Country(path)
     }

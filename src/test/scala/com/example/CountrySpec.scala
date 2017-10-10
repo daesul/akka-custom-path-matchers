@@ -4,13 +4,13 @@ import akka.http.scaladsl.server.Rejection
 import akka.http.scaladsl.model.StatusCodes._
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import akka.http.scaladsl.server.Directives._
-import com.example.Country.CountryMatcher
+import com.example.Country.country
 import org.scalatest.{Matchers, WordSpec}
 
 class CountrySpec extends WordSpec with Matchers with ScalatestRouteTest {
 
   val route =
-    path(CountryMatcher) { country =>
+    path(country) { country =>
       complete(OK -> country.toString)
     }
 

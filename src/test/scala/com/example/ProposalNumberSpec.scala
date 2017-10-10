@@ -3,12 +3,12 @@ package com.example
 import akka.http.scaladsl.model.StatusCodes.OK
 import akka.http.scaladsl.server.Directives.{complete, path}
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.example.ProposalNumber.ProposalNumberMatcher
+import com.example.ProposalNumber.proposalNumber
 import org.scalatest.{Matchers, WordSpec}
 
 class ProposalNumberSpec extends WordSpec with Matchers with ScalatestRouteTest {
   val route =
-    path(ProposalNumberMatcher) { proposalNumber: ProposalNumber =>
+    path(proposalNumber) { proposalNumber: ProposalNumber =>
       complete(OK -> proposalNumber.toString)
     }
 
