@@ -19,7 +19,7 @@ object Country {
   }
 
   val countryMatcher: PathMatcher1[Country] = {
-    PathMatcher("[a-z]{2}".r) flatMap { path =>
+    PathMatcher("[a-z]{2}".r).flatMap { path =>
       Country(path)
     }
   }

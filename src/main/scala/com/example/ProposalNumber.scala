@@ -15,7 +15,7 @@ object ProposalNumber {
   }
 
   val proposalNumberMatcher: PathMatcher1[ProposalNumber] = {
-    PathMatcher("[0-9]{4}[0-9]{7}".r) flatMap { path =>
+    PathMatcher("[0-9]{4}[0-9]{7}".r).flatMap { path =>
       ProposalNumber(path)
     }
   }
